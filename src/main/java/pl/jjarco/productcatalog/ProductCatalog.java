@@ -1,22 +1,19 @@
 package pl.jjarco.productcatalog;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
 public class ProductCatalog {
 
-    private List<Product> products;
+    ProductRepository productRepository;
 
-    public ProductCatalog() {
-        this.products = new ArrayList<>();
+    public ProductCatalog(ProductRepository productRepository) {
+        this.productRepository = productRepository;
     }
 
-
     public List<Product> allProducts() {
-        return Collections.unmodifiableList(products);
+        return productRepository.allProducts();  // TECH
     }
 
     public String createProduct(String name, String description) {
@@ -26,26 +23,23 @@ public class ProductCatalog {
                 uuid,
                 name,
                 description
-        );
+        );  // DOMAIN  // BUSINESS
 
-        this.products.add(newProduct);
+        this.productRepository.save(newProduct);  // TECH
 
         return newProduct.getId();
     }
 
     public Product loadProductById(String productId) {
-        return products.stream()
-                .filter(product -> product.getId().equals(productId))
-                .findFirst()
-                .get();
+        return productRepository.loadProductById(productId);
     }
 
     public void changePrice(String productId, BigDecimal bigDecimal) {
-        var product = loadProductById(productId);
+        var product = productRepository.loadProductById(productId);
 
         if (bigDecimal.compareTo(BigDecimal.ZERO) < 0) {
             throw new InvalidPriceException();
-        }
+        }  // DOMAIN
 
         product.changePrice(bigDecimal);
     }
