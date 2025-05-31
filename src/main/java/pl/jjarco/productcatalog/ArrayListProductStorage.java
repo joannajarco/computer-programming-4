@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ArrayListProductStorage implements ProductRepository {
 
-    private List<Product> products; //TECH
+    private ArrayList<Product> products; //TECH
 
     public ArrayListProductStorage() {
         this.products = new ArrayList<>(); //TECH

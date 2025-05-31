@@ -3,6 +3,7 @@ package pl.jjarco.productcatalog;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,9 +17,18 @@ public class HashMapProductRepositoryTest {
         //Act
         repository.save(product);
         Product loaded = repository.loadProductById(product.getId());
+
         //Assert
+        assertEquals(product.getDescription(), loaded.getDescription());
         assertEquals(product.getId(), loaded.getId());
-        assertEquals(product.getId(), loaded.getDescription());
+    }
+
+    private ProductRepository thereIsProductRepository() {
+        return new ArrayListProductStorage();
+    }
+
+    private Product thereIsProduct() {
+        return new Product(UUID.randomUUID(), "test", "desc");
     }
 
     @Test

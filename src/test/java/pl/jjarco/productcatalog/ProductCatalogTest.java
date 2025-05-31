@@ -11,12 +11,12 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ProductCatalogTest {
 
     @Test
-    void  itAllowsToListAllProducts() {
+    void itListAvailableProducts() {
         ProductCatalog catalog = thereIsProductCatalog();
 
         List<Product> products = catalog.allProducts();
 
-        assertTrue(products.isEmpty());
+        assert products.isEmpty();
     }
 
     @Test
