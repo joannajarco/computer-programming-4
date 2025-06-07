@@ -1,10 +1,13 @@
-package pl.jjarco.productcatalog;
+package pl.jjarco.ecommerce.productcatalog;
 
 import org.junit.jupiter.api.Test;
+import pl.jjarco.ecommerce.productcatalog.HashMapProductRepository;
+import pl.jjarco.ecommerce.productcatalog.InvalidPriceException;
+import pl.jjarco.ecommerce.productcatalog.Product;
+import pl.jjarco.ecommerce.productcatalog.ProductCatalog;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Vector;
 
 import static org.junit.jupiter.api.Assertions.*;
 

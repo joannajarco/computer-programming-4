@@ -1,4 +1,4 @@
-package pl.jjarco.productcatalog;
+package pl.jjarco.ecommerce.productcatalog;
 
 public class InvalidPriceException extends IllegalStateException {
 }

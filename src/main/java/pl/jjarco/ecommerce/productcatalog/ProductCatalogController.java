@@ -1,9 +1,7 @@
-package pl.jjarco.ecommerce;
+package pl.jjarco.ecommerce.productcatalog;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pl.jjarco.productcatalog.Product;
-import pl.jjarco.productcatalog.ProductCatalog;
 
 import java.util.List;
 

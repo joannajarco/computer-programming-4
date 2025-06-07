@@ -1,4 +1,4 @@
-package pl.jjarco.productcatalog;
+package pl.jjarco.ecommerce.productcatalog;
 
 import java.util.List;
 

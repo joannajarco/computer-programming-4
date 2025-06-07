@@ -1,4 +1,4 @@
-package pl.jjarco.productcatalog;
+package pl.jjarco.ecommerce.productcatalog;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ArrayListProductStorage implements ProductRepository {
 
-    private ArrayList<Product> products; //TECH
+    private final List<Product> products;//TECH
 
     public ArrayListProductStorage() {
         this.products = new ArrayList<>(); //TECH
@@ -27,6 +27,6 @@ public class ArrayListProductStorage implements ProductRepository {
         return products.stream()
                 .filter(product -> product.getId().equals(productId))
                 .findFirst()
-                .get();  // TECH
+                .get();
     }
 }

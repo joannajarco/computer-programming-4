@@ -17,7 +17,7 @@ const createProductHtml = (productData) => {
 }
 
 (() => {
-    const productsListEl = document.querySelector('#productsList');
+    const productsListEl = document.querySelector('.productsList');
     getProducts()
         .then(products => products.map(createProductHtml))
         .then(productHtmlElements => productHtmlElements.forEach(el => productsListEl.appendChild(el)));
